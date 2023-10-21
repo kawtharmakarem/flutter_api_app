@@ -6,7 +6,7 @@ import 'package:get_it/get_it.dart';
 
 final getIt=GetIt.instance;
 void initGetIt(){
-  getIt.registerLazySingleton<WebServices>(() => WebServices(Dio()));
+  getIt.registerLazySingleton<WebServices>(() => WebServices(createAndSetupDio()));
   getIt.registerLazySingleton<MyRepo>(() => MyRepo(getIt()));
   getIt.registerLazySingleton<MyCubit>(() => MyCubit(getIt()));
 

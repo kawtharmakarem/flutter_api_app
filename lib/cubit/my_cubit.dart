@@ -10,9 +10,27 @@ class MyCubit extends Cubit<MyState> {
   final MyRepo myRepo;
   MyCubit(this.myRepo) : super(MyInitial());
 
-  void emitGetAllUsers(){
-myRepo.getAllUsers().then((usersList){
-  emit(GetAllUsers(usersList));
-});
+  void emitGetAllUsers() {
+    myRepo.getAllUsers().then((usersList) {
+      emit(GetAllUsers(usersList));
+    });
+  }
+
+  void emitGetUserDetails(int userId) {
+    myRepo.getUserById(userId).then((userDetails) {
+      emit(GetUserDetails(userDetails));
+    });
+  }
+
+  void emitCreateNewUser(User user) {
+    myRepo.createNewUser(user).then((newUser) {
+      emit(CreateNewUser(newUser));
+    });
+  }
+
+  void emitDeleteUser(int userId) {
+    myRepo.deleteUser(userId).then((data){
+      return emit(DeleteUser(data));
+    });
   }
 }

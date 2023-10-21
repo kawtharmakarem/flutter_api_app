@@ -4,7 +4,7 @@ import 'package:flutter_api_app/home.dart';
 import 'package:flutter_api_app/injection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main()  async {
   WidgetsFlutterBinding.ensureInitialized();
   initGetIt();
   runApp(const MyApp());
