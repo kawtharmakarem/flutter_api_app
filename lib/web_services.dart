@@ -25,7 +25,7 @@ Future<User> createNewUser(@Body() User user,@Header('Authorization') String tok
 
 //delete user
 @DELETE('users/{id}')
-Future<dynamic> deleteUser(@Path() int id,@Header('Authorization') String token);
+Future<HttpResponse> deleteUser(@Path() int id,@Header('Authorization') String token);
 }
 
 
